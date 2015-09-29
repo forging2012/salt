@@ -1,0 +1,1 @@
+addr={{ grains['addr'] }} place={{ grains['place'] }} user={{ grains['user']}} group={{ grains['group'] }}

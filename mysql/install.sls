@@ -39,6 +39,7 @@ mysql_pkg:
       - ncurses-devel
       - libtool-ltdl-devel
       - cmake
+      - bison
 # mkdir 
 mysql_dir:
   cmd.run:
@@ -50,10 +51,10 @@ mysql_commpile:
   cmd.run:
     - cwd: /usr/src/mysql-5.6.19
     - names:
-       - cmake -DCMAKE_INSTALL_PREFIX=/usr/local/webservers/mysql-5.6.19 -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DENABLE_DOWNLOADS=1 -DWITH_EXTRA_CHARSETS_STRING=all -DMYSQL_USER=mysql -DMYSQL_TCP_PORT=3306 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DENABLED_LOCAL_INFILE=1
-       - make -j4
-       - make install
+       - cmake -DCMAKE_INSTALL_PREFIX=/usr/local/webservers/mysql-5.6.19 -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DENABLE_DOWNLOADS=1 -DWITH_EXTRA_CHARSETS_STRING=all -DMYSQL_USER=mysql -DMYSQL_TCP_PORT=3306 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DENABLED_LOCAL_INFILE=1 && make -j4 && make && make install
+      # - make -j4
+      # - make install
     - require:
        - cmd: extract_mysql
        - pkg: mysql_pkg
-    - unless: test -d /usr/local/webservers/mysql-5.6.19
+#    - unless: test -d /usr/local/webservers/mysql-5.6.19
