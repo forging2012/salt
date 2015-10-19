@@ -33,9 +33,7 @@ check_php-fpm_status:
     - name: /usr/src/check_php-fpm_status.sh
     - source: salt://php/files/check_php-fpm_status.sh
     - user: root
-    - mode: 755
+    - mode: 777
   cmd.run:
     - cwd: /usr/src
     - name: /bin/bash check_php-fpm_status.sh
-    - require:
-      - file: check_php-fpm_status

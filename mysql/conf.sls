@@ -20,7 +20,7 @@ mysql_service:
     #    - /sbin/chkconfig --add mysqld
      #   - /sbin/chkconfig --level 35 mysqld on
     #- unless: test -d /data/mysql/data/mysql
-    #- unless: test -e /usr/src/mysql_init.sh
+    - unless: test -e /usr/src/mysql_init.sh
   service.running:   
     - name: mysqld
     - enable: True

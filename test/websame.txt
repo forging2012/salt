@@ -1,1 +1,2 @@
 addr={{ grains['addr'] }} place={{ grains['place'] }} user={{ grains['user']}} group={{ grains['group'] }}
+ip= {{ grains['ip_interfaces']['eth0'][0] }}
