@@ -8,11 +8,11 @@
 DIR='/usr/local/webservers/mysql-5.6.19'
 
 #mysq init
-if [ "`ls -A /data/mysql/data/`" = "" ];then
+#if [ "`ls -A /data/mysql/data/`" = "" ];then
 
 $DIR/scripts/mysql_install_db --user=mysql --basedir=/usr/local/webservers/mysql-5.6.19/ --datadir=/data/mysql/data
 
-fi
+#fi
 
 #mysq grains
 /bin/chown -R mysql.mysql /data/mysql
